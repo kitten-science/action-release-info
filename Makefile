@@ -5,7 +5,7 @@ default: build
 build: output
 
 clean:
-	rm --force --recursive node_modules output tsconfig.tsbuildinfo
+	rm --force --recursive build coverage node_modules output tsconfig.tsbuildinfo
 
 docs:
 	@echo "This project has no documentation."
@@ -39,4 +39,5 @@ node_modules:
 
 output: node_modules
 	node build.js
+	@mkdir lib || true
 	cp output/main.js lib/main.js

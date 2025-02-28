@@ -13,4 +13,4 @@ inputs:
     required: true
 runs:
   using: node20
-  main: build/main.js
+  main: lib/main.js
