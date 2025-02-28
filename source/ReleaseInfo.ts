@@ -2,39 +2,7 @@ import { writeFileSync } from "node:fs";
 import type core from "@actions/core";
 import type { Context } from "@actions/github/lib/context.js";
 import type { GitHub } from "@actions/github/lib/utils.js";
-
-export type ReleaseMeta = {
-  /**
-   * The version string of the release.
-   */
-  version: string;
-
-  /**
-   * When was this release created?
-   */
-  date: string;
-
-  url: {
-    /**
-     * A URL that points to the userscript.
-     */
-    default: string;
-
-    /**
-     * The same userscript, but minified.
-     */
-    minified: string;
-
-    /**
-     * Points to the GitHub release for this version.
-     */
-    release: string;
-  };
-};
-
-export type TravelingReleaseChannel = "dev" | "nightly" | "stable";
-export type ReleaseChannel = "fixed" | TravelingReleaseChannel;
-export type ReleaseInfoSchema = Record<TravelingReleaseChannel, ReleaseMeta>;
+import type { ReleaseInfoSchema } from "@kitten-science/kitten-scientists/types/releases.js";
 
 export type ReleaseInfoOptions = {
   context: Context;
