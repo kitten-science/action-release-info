@@ -5,14 +5,13 @@
   "version": "0.0.2",
   "license": "MIT",
   "author": "Oliver Salzburg <oliver.salzburg@gmail.com>",
-  "homepage": "https://github.com/kitten-science/kitten-scientists",
+  "homepage": "https://github.com/kitten-science/action-release-info",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kitten-science/kitten-scientists.git",
-    "directory": "packages/action-release-info"
+    "url": "git+https://github.com/kitten-science/action-release-info.git"
   },
   "bugs": {
-    "url": "https://github.com/kitten-science/kitten-scientists/issues"
+    "url": "https://github.com/kitten-science/action-release-info/issues"
   },
   "type": "module",
   "scripts": {
