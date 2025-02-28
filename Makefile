@@ -39,5 +39,5 @@ node_modules:
 
 output: node_modules
 	node build.js
-	@mkdir lib || true
+	@mkdir lib 2>/dev/null || true
 	cp output/main.js lib/main.js
