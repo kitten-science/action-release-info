@@ -1,0 +1,14 @@
+.yarn/cache/*.zip binary
+.yarn linguist-vendored
+
+docs/ linguist-generated
+
+# In general, use LF for text
+* text=auto eol=lf
+
+*.gz binary
+*.ico binary
+*.jpg binary
+*.png binary
+*.psd binary
+*.zip binary
