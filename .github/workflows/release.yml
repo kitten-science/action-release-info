@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  qa:
+    name: 🔹 QA
+    permissions:
+      contents: read
+      packages: read
+    uses: oliversalzburg/workflows/.github/workflows/qa-github-action-nodejs.yml@main
+
+  release:
+    name: 🔹 Publish
+    needs: qa
+    permissions:
+      contents: write
+      id-token: write
+      packages: write
+      pages: write
+      pull-requests: read
+    uses: oliversalzburg/workflows/.github/workflows/publish-github-action-nodejs.yml@main
+    with:
+      draft-only: false
+      is-canary: false
+      wants-github-release: true
