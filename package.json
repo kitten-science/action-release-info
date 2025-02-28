@@ -15,6 +15,11 @@
     "url": "https://github.com/kitten-science/kitten-scientists/issues"
   },
   "type": "module",
+  "scripts": {
+    "preversion": "make lint test",
+    "version": "make && git add --all lib",
+    "postversion": "git push"
+  },
   "exports": {
     ".": "./build/index.js"
   },
