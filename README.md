@@ -10,3 +10,9 @@
 | <a name="input_repo-token"></a>[repo-token](#input_repo-token) | string |   true   |         |                                            Needs `secrets.GITHUB_TOKEN` to talk to <br>the API.                                              |
 
 <!-- AUTO-DOC-INPUT:END -->
+
+## Release Process
+
+```shell
+npm version patch --message "chore: Version bump %s"
+```
