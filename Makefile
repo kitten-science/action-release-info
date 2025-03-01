@@ -21,7 +21,7 @@ lint: node_modules
 	yarn biome check .
 	yarn tsc --noEmit
 
-test:
+test: node_modules
 	yarn tsc
 	yarn c8 --reporter=html-spa node $(shell yarn bin mocha) output/*.test.js
 
@@ -39,5 +39,3 @@ node_modules:
 
 output: node_modules
 	node build.js
-	@mkdir lib 2>/dev/null || true
-	cp output/main.js lib/main.js
