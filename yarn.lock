@@ -412,7 +412,7 @@ __metadata:
     "@biomejs/biome": "npm:1.9.4"
     "@kie/mock-github": "npm:3.0.0-beta.1"
     "@kitten-science/kitten-scientists": "npm:2.0.0-beta.10-dev-ed7e6ea"
-    "@oliversalzburg/js-utils": "npm:0.2.8"
+    "@oliversalzburg/js-utils": "npm:0.2.13"
     "@types/chai": "npm:5.2.0"
     "@types/mocha": "npm:10.0.10"
     "@types/node": "npm:22.13.10"
@@ -626,6 +626,13 @@ __metadata:
   dependencies:
     "@octokit/openapi-types": "npm:^23.0.1"
   checksum: 10c0/e08c2fcf10e374f18e4c9fa12a6ada33a40f112d1209012a39f0ce40ae7aa9dcf0598b6007b467f63cc4a97e7b1388d6eed34ddef61494655e08b5a95afaad97
+  languageName: node
+  linkType: hard
+
+"@oliversalzburg/js-utils@npm:0.2.13":
+  version: 0.2.13
+  resolution: "@oliversalzburg/js-utils@npm:0.2.13"
+  checksum: 10c0/367096367701fc0f5e15ce0dc4a020cdf64339da8eae5c43ebb4b683a6e255ea15c4fab6e703f931b5be3f55be69864dbe12be09f4ebc963f6b8f7d85affc36d
   languageName: node
   linkType: hard
 
