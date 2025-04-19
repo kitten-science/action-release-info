@@ -54,7 +54,7 @@ export class ReleaseInfo {
       .getReleaseByTag({
         owner: context.repo.owner,
         repo: context.repo.repo,
-        tag: "next",
+        tag: "dev",
       })
       .catch(() => null);
 
