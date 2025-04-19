@@ -13,22 +13,22 @@ const mockHappyPath = (moctokit: Moctokit) => {
     .getReleaseByTag({
       owner: "kitten-science",
       repo: "kitten-scientists",
-      tag: "next",
+      tag: "dev",
     })
     .reply({
       status: 200,
       data: {
         name: "Development Build v2.0.0-beta.9-dev-2179ddb",
-        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/next",
+        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/dev",
         assets: [
           {
             browser_download_url:
-              "https://github.com/kitten-science/kitten-scientists/releases/download/next/kitten-scientists-2.0.0-beta.9-dev-2179ddb.min.user.js",
+              "https://github.com/kitten-science/kitten-scientists/releases/download/dev/kitten-scientists-2.0.0-beta.9-dev-2179ddb.min.user.js",
             name: "kitten-scientists-2.0.0-beta.9-dev-2179ddb.min.user.js",
           },
           {
             browser_download_url:
-              "https://github.com/kitten-science/kitten-scientists/releases/download/next/kitten-scientists-2.0.0-beta.9-dev-2179ddb.user.js",
+              "https://github.com/kitten-science/kitten-scientists/releases/download/dev/kitten-scientists-2.0.0-beta.9-dev-2179ddb.user.js",
             name: "kitten-scientists-2.0.0-beta.9-dev-2179ddb.user.js",
           },
         ],
