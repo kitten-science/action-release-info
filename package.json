@@ -35,7 +35,7 @@
     "@kitten-science/kitten-scientists": "2.0.0-beta.10-dev-ed7e6ea",
     "@types/chai": "5.2.2",
     "@types/mocha": "10.0.10",
-    "@types/node": "22.15.30",
+    "@types/node": "22.15.31",
     "c8": "10.1.3",
     "chai": "5.2.0",
     "esbuild": "0.25.5",
