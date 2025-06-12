@@ -86,7 +86,6 @@
       "_site/",
       ".git/",
       ".github/",
-      ".yarn/",
       "docs/",
       "lib/",
       "node_modules/",
