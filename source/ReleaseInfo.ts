@@ -79,13 +79,13 @@ export class ReleaseInfo {
     const releaseInfo: ReleaseInfoSchema = {
       dev: latestBuildDev
         ? {
-            version: extractVersionFromTitle(latestBuildDev.data.name),
             date: latestBuildDev.data.published_at ?? latestBuildDev.data.created_at,
             url: {
               default: findUserscript(latestBuildDev.data.assets).browser_download_url,
               minified: findUserscript(latestBuildDev.data.assets, true).browser_download_url,
               release: latestBuildDev.data.html_url,
             },
+            version: extractVersionFromTitle(latestBuildDev.data.name),
           }
         : {
             date: "",
@@ -98,13 +98,13 @@ export class ReleaseInfo {
           },
       nightly: latestBuildNightly
         ? {
-            version: extractVersionFromTitle(latestBuildNightly.data.name),
             date: latestBuildNightly.data.published_at ?? latestBuildNightly.data.created_at,
             url: {
               default: findUserscript(latestBuildNightly.data.assets).browser_download_url,
               minified: findUserscript(latestBuildNightly.data.assets, true).browser_download_url,
               release: latestBuildNightly.data.html_url,
             },
+            version: extractVersionFromTitle(latestBuildNightly.data.name),
           }
         : {
             date: "",
@@ -117,13 +117,13 @@ export class ReleaseInfo {
           },
       stable: latestBuildStable
         ? {
-            version: latestBuildStable.data.tag_name,
             date: latestBuildStable.data.published_at ?? latestBuildStable.data.created_at,
             url: {
               default: findUserscript(latestBuildStable.data.assets).browser_download_url,
               minified: findUserscript(latestBuildStable.data.assets, true).browser_download_url,
               release: latestBuildStable.data.html_url,
             },
+            version: latestBuildStable.data.tag_name,
           }
         : {
             date: "",

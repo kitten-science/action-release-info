@@ -16,10 +16,7 @@ const mockHappyPath = (moctokit: Moctokit) => {
       tag: "dev",
     })
     .reply({
-      status: 200,
       data: {
-        name: "Development Build v2.0.0-beta.9-dev-2179ddb",
-        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/dev",
         assets: [
           {
             browser_download_url:
@@ -32,7 +29,10 @@ const mockHappyPath = (moctokit: Moctokit) => {
             name: "kitten-scientists-2.0.0-beta.9-dev-2179ddb.user.js",
           },
         ],
+        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/dev",
+        name: "Development Build v2.0.0-beta.9-dev-2179ddb",
       },
+      status: 200,
     });
 
   moctokit.rest.repos
@@ -42,10 +42,7 @@ const mockHappyPath = (moctokit: Moctokit) => {
       tag: "nightly",
     })
     .reply({
-      status: 200,
       data: {
-        name: "Nightly Build v2.0.0-beta.9-20231025-2179ddb",
-        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/nightly",
         assets: [
           {
             browser_download_url:
@@ -58,7 +55,10 @@ const mockHappyPath = (moctokit: Moctokit) => {
             name: "kitten-scientists-2.0.0-beta.9-20231025-2179ddb.user.js",
           },
         ],
+        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/nightly",
+        name: "Nightly Build v2.0.0-beta.9-20231025-2179ddb",
       },
+      status: 200,
     });
 
   moctokit.rest.repos
@@ -68,10 +68,7 @@ const mockHappyPath = (moctokit: Moctokit) => {
       tag: "v2.0.0-beta.9",
     })
     .reply({
-      status: 200,
       data: {
-        name: "v2.0.0-beta.9",
-        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/v2.0.0-beta.9",
         assets: [
           {
             browser_download_url:
@@ -84,7 +81,10 @@ const mockHappyPath = (moctokit: Moctokit) => {
             name: "kitten-scientists-2.0.0-beta.7.user.js",
           },
         ],
+        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/v2.0.0-beta.9",
+        name: "v2.0.0-beta.9",
       },
+      status: 200,
     });
 };
 
@@ -110,12 +110,12 @@ it("fails without assets", async () => {
       tag: "next",
     })
     .reply({
-      status: 200,
       data: {
-        name: "Development Build v2.0.0-beta.9-dev-2179ddb",
-        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/next",
         assets: undefined,
+        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/next",
+        name: "Development Build v2.0.0-beta.9-dev-2179ddb",
       },
+      status: 200,
     });
 
   moctokit.rest.repos
@@ -125,12 +125,12 @@ it("fails without assets", async () => {
       tag: "nightly",
     })
     .reply({
-      status: 200,
       data: {
-        name: "Nightly Build v2.0.0-beta.9-20231025-2179ddb",
-        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/nightly",
         assets: undefined,
+        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/nightly",
+        name: "Nightly Build v2.0.0-beta.9-20231025-2179ddb",
       },
+      status: 200,
     });
 
   moctokit.rest.repos
@@ -140,12 +140,12 @@ it("fails without assets", async () => {
       tag: "v2.0.0-beta.9",
     })
     .reply({
-      status: 200,
       data: {
-        name: "v2.0.0-beta.9",
-        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/v2.0.0-beta.9",
         assets: undefined,
+        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/v2.0.0-beta.9",
+        name: "v2.0.0-beta.9",
       },
+      status: 200,
     });
 
   const releaseInfo = new ReleaseInfo({
@@ -174,10 +174,7 @@ it("fails if no usescript in release", async () => {
       tag: "next",
     })
     .reply({
-      status: 200,
       data: {
-        name: "Development Build v2.0.0-beta.9-dev-2179ddb",
-        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/next",
         assets: [
           {
             browser_download_url:
@@ -185,7 +182,10 @@ it("fails if no usescript in release", async () => {
             name: "README.md",
           },
         ],
+        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/next",
+        name: "Development Build v2.0.0-beta.9-dev-2179ddb",
       },
+      status: 200,
     });
 
   moctokit.rest.repos
@@ -195,10 +195,7 @@ it("fails if no usescript in release", async () => {
       tag: "nightly",
     })
     .reply({
-      status: 200,
       data: {
-        name: "Nightly Build v2.0.0-beta.9-20231025-2179ddb",
-        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/nightly",
         assets: [
           {
             browser_download_url:
@@ -206,7 +203,10 @@ it("fails if no usescript in release", async () => {
             name: "README.md",
           },
         ],
+        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/nightly",
+        name: "Nightly Build v2.0.0-beta.9-20231025-2179ddb",
       },
+      status: 200,
     });
 
   moctokit.rest.repos
@@ -216,10 +216,7 @@ it("fails if no usescript in release", async () => {
       tag: "v2.0.0-beta.9",
     })
     .reply({
-      status: 200,
       data: {
-        name: "v2.0.0-beta.9",
-        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/v2.0.0-beta.9",
         assets: [
           {
             browser_download_url:
@@ -227,7 +224,10 @@ it("fails if no usescript in release", async () => {
             name: "README.md",
           },
         ],
+        html_url: "https://github.com/kitten-science/kitten-scientists/releases/tag/v2.0.0-beta.9",
+        name: "v2.0.0-beta.9",
       },
+      status: 200,
     });
 
   const releaseInfo = new ReleaseInfo({
