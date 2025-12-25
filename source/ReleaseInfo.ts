@@ -82,7 +82,7 @@ export class ReleaseInfo {
             date: latestBuildDev.data.published_at ?? latestBuildDev.data.created_at,
             url: {
               default: findUserscript(latestBuildDev.data.assets).browser_download_url,
-              minified: findUserscript(latestBuildDev.data.assets, true).browser_download_url,
+              minified: findUserscript(latestBuildDev.data.assets).browser_download_url,
               release: latestBuildDev.data.html_url,
             },
             version: extractVersionFromTitle(latestBuildDev.data.name),
@@ -101,7 +101,7 @@ export class ReleaseInfo {
             date: latestBuildNightly.data.published_at ?? latestBuildNightly.data.created_at,
             url: {
               default: findUserscript(latestBuildNightly.data.assets).browser_download_url,
-              minified: findUserscript(latestBuildNightly.data.assets, true).browser_download_url,
+              minified: findUserscript(latestBuildNightly.data.assets).browser_download_url,
               release: latestBuildNightly.data.html_url,
             },
             version: extractVersionFromTitle(latestBuildNightly.data.name),
@@ -120,7 +120,7 @@ export class ReleaseInfo {
             date: latestBuildStable.data.published_at ?? latestBuildStable.data.created_at,
             url: {
               default: findUserscript(latestBuildStable.data.assets).browser_download_url,
-              minified: findUserscript(latestBuildStable.data.assets, true).browser_download_url,
+              minified: findUserscript(latestBuildStable.data.assets).browser_download_url,
               release: latestBuildStable.data.html_url,
             },
             version: latestBuildStable.data.tag_name,

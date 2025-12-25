@@ -20,11 +20,6 @@ const mockHappyPath = (moctokit: Moctokit) => {
         assets: [
           {
             browser_download_url:
-              "https://github.com/kitten-science/kitten-scientists/releases/download/dev/kitten-scientists-2.0.0-beta.9-dev-2179ddb.min.user.js",
-            name: "kitten-scientists-2.0.0-beta.9-dev-2179ddb.min.user.js",
-          },
-          {
-            browser_download_url:
               "https://github.com/kitten-science/kitten-scientists/releases/download/dev/kitten-scientists-2.0.0-beta.9-dev-2179ddb.user.js",
             name: "kitten-scientists-2.0.0-beta.9-dev-2179ddb.user.js",
           },
@@ -46,11 +41,6 @@ const mockHappyPath = (moctokit: Moctokit) => {
         assets: [
           {
             browser_download_url:
-              "https://github.com/kitten-science/kitten-scientists/releases/download/nightly/kitten-scientists-2.0.0-beta.9-20231025-2179ddb.min.user.js",
-            name: "kitten-scientists-2.0.0-beta.9-20231025-2179ddb.min.user.js",
-          },
-          {
-            browser_download_url:
               "https://github.com/kitten-science/kitten-scientists/releases/download/nightly/kitten-scientists-2.0.0-beta.9-20231025-2179ddb.user.js",
             name: "kitten-scientists-2.0.0-beta.9-20231025-2179ddb.user.js",
           },
@@ -70,11 +60,6 @@ const mockHappyPath = (moctokit: Moctokit) => {
     .reply({
       data: {
         assets: [
-          {
-            browser_download_url:
-              "https://github.com/kitten-science/kitten-scientists/releases/download/v2.0.0-beta.9/kitten-scientists-2.0.0-beta.7.min.user.js",
-            name: "kitten-scientists-2.0.0-beta.7.min.user.js",
-          },
           {
             browser_download_url:
               "https://github.com/kitten-science/kitten-scientists/releases/download/v2.0.0-beta.9/kitten-scientists-2.0.0-beta.7.user.js",
