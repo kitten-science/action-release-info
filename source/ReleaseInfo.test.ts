@@ -1,7 +1,6 @@
 import { rm, stat } from "node:fs/promises";
 import * as core from "@actions/core";
 import { context, getOctokit } from "@actions/github";
-import { Context } from "@actions/github/lib/context.js";
 import { Moctokit } from "@kie/mock-github";
 import { unknownToError } from "@oliversalzburg/js-utils/errors/error-serializer.js";
 import { expect } from "chai";
@@ -253,7 +252,7 @@ it("writes release info to file", async () => {
   mockHappyPath(moctokit);
 
   const releaseInfo = new ReleaseInfo({
-    context: new Context(),
+    context: { repo: {} } as unknown as typeof context,
     core,
     octokit: getOctokit("invalid-token", { request: { fetch } }),
   });
