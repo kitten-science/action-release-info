@@ -1,11 +1,11 @@
 import { writeFileSync } from "node:fs";
 import * as core from "@actions/core";
-import type { Context } from "@actions/github/lib/context.js";
-import type { GitHub } from "@actions/github/lib/utils.js";
+import { context } from "@actions/github";
+import type { GitHub } from "@actions/github/lib/utils";
 import type { ReleaseInfoSchema } from "@kitten-science/kitten-scientists/types/index.js";
 
 export type ReleaseInfoOptions = {
-  context: Context;
+  context: typeof context;
   core: typeof core;
   octokit: InstanceType<typeof GitHub>;
 };
