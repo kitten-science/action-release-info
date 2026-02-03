@@ -1,5 +1,5 @@
 import { rm, stat } from "node:fs/promises";
-import core from "@actions/core";
+import * as core from "@actions/core";
 import { context, getOctokit } from "@actions/github";
 import { Context } from "@actions/github/lib/context.js";
 import { Moctokit } from "@kie/mock-github";
