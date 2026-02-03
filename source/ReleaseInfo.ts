@@ -1,5 +1,5 @@
 import { writeFileSync } from "node:fs";
-import type core from "@actions/core";
+import * as core from "@actions/core";
 import type { Context } from "@actions/github/lib/context.js";
 import type { GitHub } from "@actions/github/lib/utils.js";
 import type { ReleaseInfoSchema } from "@kitten-science/kitten-scientists/types/index.js";
