@@ -1,10 +1,10 @@
+import assert from "node:assert";
 import { rm, stat } from "node:fs/promises";
+import { after, beforeEach, it } from "node:test";
 import * as core from "@actions/core";
 import { context, getOctokit } from "@actions/github";
 import { Moctokit } from "@kie/mock-github";
 import { unknownToError } from "@oliversalzburg/js-utils/errors/error-serializer.js";
-import { expect } from "chai";
-import { it } from "mocha";
 import { ReleaseInfo } from "./ReleaseInfo.js";
 
 const mockHappyPath = (moctokit: Moctokit) => {
@@ -144,7 +144,7 @@ it("fails without assets", async () => {
       throw new Error("Expected unit to throw.");
     })
     .catch((error: unknown) =>
-      expect(unknownToError(error).message).to.match(/No assets found in release./),
+      assert.strictEqual(/No assets found in release./.test(unknownToError(error).message), true),
     );
 });
 
@@ -226,7 +226,10 @@ it("fails if no usescript in release", async () => {
       throw new Error("Expected unit to throw.");
     })
     .catch((error: unknown) =>
-      expect(unknownToError(error).message).to.match(/Couldn't find userscript in assets./),
+      assert.strictEqual(
+        /Couldn't find userscript in assets./.test(unknownToError(error).message),
+        true,
+      ),
     );
 });
 
@@ -259,5 +262,5 @@ it("writes release info to file", async () => {
 
   await releaseInfo.main();
 
-  await stat("./release-info.json").then(stats => expect(stats).to.exist);
+  await stat("./release-info.json").then(stats => assert.notStrictEqual(stats, undefined));
 });
