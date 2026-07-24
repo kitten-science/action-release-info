@@ -31,12 +31,14 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.4",
-    "@kitten-science/kitten-scientists": "2.0.0-beta.12-nightly.20251228",
     "@types/node": "24.10.13",
     "esbuild": "0.27.3",
     "typescript": "5.9.3"
   },
   "engines": {
     "node": ">=24"
+  },
+  "allowScripts": {
+    "esbuild@0.27.3": true
   }
 }

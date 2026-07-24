@@ -2,7 +2,7 @@ import { writeFileSync } from "node:fs";
 import * as core from "@actions/core";
 import { context } from "@actions/github";
 import type { GitHub } from "@actions/github/lib/utils";
-import type { ReleaseInfoSchema } from "@kitten-science/kitten-scientists/types/index.js";
+import type { ReleaseInfoSchema } from "./_releases.js";
 
 export type ReleaseInfoOptions = {
   context: typeof context;
@@ -12,16 +12,12 @@ export type ReleaseInfoOptions = {
 
 export const findUserscript = <TAsset extends { name: string }>(
   assets: Array<TAsset> | undefined,
-  minified = false,
 ): TAsset => {
   if (!assets) {
     throw new Error("No assets found in release.");
   }
 
-  const asset = assets.find(
-    asset =>
-      asset.name.startsWith("kitten-scientists-") && asset.name.includes(".min.") === minified,
-  );
+  const asset = assets.find(asset => asset.name.startsWith("kitten-scientists-"));
 
   if (!asset) {
     throw new Error("Couldn't find userscript in assets.");
@@ -82,7 +78,6 @@ export class ReleaseInfo {
             date: latestBuildDev.data.published_at ?? latestBuildDev.data.created_at,
             url: {
               default: findUserscript(latestBuildDev.data.assets).browser_download_url,
-              minified: findUserscript(latestBuildDev.data.assets).browser_download_url,
               release: latestBuildDev.data.html_url,
             },
             version: extractVersionFromTitle(latestBuildDev.data.name),
@@ -91,7 +86,6 @@ export class ReleaseInfo {
             date: "",
             url: {
               default: "",
-              minified: "",
               release: "",
             },
             version: "",
@@ -101,7 +95,6 @@ export class ReleaseInfo {
             date: latestBuildNightly.data.published_at ?? latestBuildNightly.data.created_at,
             url: {
               default: findUserscript(latestBuildNightly.data.assets).browser_download_url,
-              minified: findUserscript(latestBuildNightly.data.assets).browser_download_url,
               release: latestBuildNightly.data.html_url,
             },
             version: extractVersionFromTitle(latestBuildNightly.data.name),
@@ -110,7 +103,6 @@ export class ReleaseInfo {
             date: "",
             url: {
               default: "",
-              minified: "",
               release: "",
             },
             version: "",
@@ -120,7 +112,6 @@ export class ReleaseInfo {
             date: latestBuildStable.data.published_at ?? latestBuildStable.data.created_at,
             url: {
               default: findUserscript(latestBuildStable.data.assets).browser_download_url,
-              minified: findUserscript(latestBuildStable.data.assets).browser_download_url,
               release: latestBuildStable.data.html_url,
             },
             version: latestBuildStable.data.tag_name,
@@ -129,7 +120,6 @@ export class ReleaseInfo {
             date: "",
             url: {
               default: "",
-              minified: "",
               release: "",
             },
             version: "",
@@ -144,10 +134,6 @@ export class ReleaseInfo {
     core.setOutput("dev-url-default", releaseInfo.dev.url.default);
     core.setOutput("nightly-url-default", releaseInfo.nightly.url.default);
     core.setOutput("stable-url-default", releaseInfo.stable.url.default);
-
-    core.setOutput("dev-url-minified", releaseInfo.dev.url.minified);
-    core.setOutput("nightly-url-minified", releaseInfo.nightly.url.minified);
-    core.setOutput("stable-url-minified", releaseInfo.stable.url.minified);
     console.dir(releaseInfo);
   }
 }
